@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Restaurants & Cafes - TripAdvisor Clone</title>
+  <meta name="description" content="Discover the best local restaurants, fine dining bistros, bars, and cafes. Read traveler reviews and book tables online.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Sticky Navigation Header -->
+  <header class="header-nav">
+    <div class="container flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" fill="var(--brand-green)" stroke="none"/>
+          <circle cx="8.5" cy="11.5" r="2.5" fill="white" stroke="none"/>
+          <circle cx="8.5" cy="11.5" r="1" fill="black" stroke="none"/>
+          <circle cx="15.5" cy="11.5" r="2.5" fill="white" stroke="none"/>
+          <circle cx="15.5" cy="11.5" r="1" fill="black" stroke="none"/>
+          <polygon points="12,13 10,15 14,15" fill="white" stroke="none"/>
+        </svg>
+        <span>Tripadvisor</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="flex items-center gap-3">
+        <ul class="nav-links">
+          <li><a href="index.html">Discover</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="restaurants.html" class="active">Restaurants</a></li>
+          <li><a href="things-to-do.html">Things to Do</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Dark Mode Toggle Slider -->
+          <label class="theme-switch-container" title="Toggle Dark/Light Mode">
+            <input type="checkbox" id="dark-mode-toggle" style="position: absolute; opacity: 0; width: 0; height: 0;">
+            <span class="theme-switch-slider">
+              <span class="sun-icon">☀️</span>
+              <span class="moon-icon">🌙</span>
+            </span>
+          </label>
+
+          <a href="hotel-detail.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">View Featured</a>
+          <a href="hotels.html" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.9rem;">Book Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Main Layout -->
+  <main class="container" style="padding: 40px 24px 80px;">
+    
+    <!-- Top breadcrumb and search meta -->
+    <div style="margin-bottom: 24px;">
+      <span style="font-size: 0.9rem; color: var(--text-muted);">Explore &gt; Restaurants Directory</span>
+      <h1 style="font-size: 2.2rem; font-weight: 800; margin-top: 8px;">Best Dining & Restaurants</h1>
+      <p style="color: var(--text-secondary); margin-top: 4px;">Top rated tables, gastropubs, and dining experiences</p>
+    </div>
+
+    <!-- Main Content Area: Split Sidebar/Listings -->
+    <div class="listing-layout">
+      
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar">
+        <!-- Filter Header -->
+        <div class="filter-section" style="padding-top: 0;">
+          <h3 class="filter-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0;">
+            Filters
+            <a href="#" style="font-size: 0.8rem; color: var(--brand-green); font-weight: 600;">Clear All</a>
+          </h3>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="filter-section">
+          <h4 class="filter-title">Price Range</h4>
+          <div class="filter-group">
+            <label class="filter-option">
+              <input type="checkbox" checked>
+              <span>£ (Cheap Eats)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" checked>
+              <span>££ - £££ (Mid-range)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox">
+              <span>££££ (Fine Dining)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Cuisine Filter -->
+        <div class="filter-section">
+          <h4 class="filter-title">Cuisine Type</h4>
+          <div class="filter-group">
+            <label class="filter-option">
+              <input type="checkbox" checked>
+              <span>Italian</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" checked>
+              <span>French</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox">
+              <span>Japanese</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox">
+              <span>Seafood</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" checked>
+              <span>Vegetarian Friendly</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Establishment Type Filter -->
+        <div class="filter-section">
+          <h4 class="filter-title">Establishment Type</h4>
+          <div class="filter-group">
+            <label class="filter-option">
+              <input type="checkbox" checked>
+              <span>Restaurants</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox">
+              <span>Bars & Pubs</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" checked>
+              <span>Cafes & Bistros</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox">
+              <span>Specialty Food Tours</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Restaurant Listings Grid/List -->
+      <section class="list-results">
+        
+        <!-- Listing 1 (The Glass Ocean Bistro - Custom Generated Image) -->
+        <div class="list-card horiz-card">
+          <div class="list-card-img-wrapper">
+            <img src="assets/images/restaurant_fine.png" alt="The Glass Ocean Bistro">
+            <div class="list-card-badges">
+              <span class="badge badge-choice">Traveller's Choice</span>
+            </div>
+            <input type="checkbox" id="fav-rest-1" class="heart-checkbox">
+            <label for="fav-rest-1" class="heart-btn" title="Save to list">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </label>
+          </div>
+          <div class="list-card-content">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+              <span class="list-card-tag">Fine Dining • Seafood • Maldives</span>
+              <span style="font-size: 0.85rem; font-weight: 600; color: var(--brand-red);">££££</span>
+            </div>
+            <a href="hotel-detail.html" class="list-card-title" style="font-size: 1.4rem; margin-bottom: 10px;">The Glass Ocean Bistro</a>
+            
+            <div class="rating-container" style="margin-bottom: 12px;">
+              <div class="rating-bubbles">
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+              </div>
+              <span class="rating-count">743 reviews</span>
+            </div>
+
+            <!-- Mini Description -->
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Award-winning underwater restaurant serving fresh seafood and signature cocktails with live ocean views.
+            </p>
+
+            <div class="list-card-details" style="border-top-style: solid;">
+              <div style="font-size: 0.9rem; color: var(--text-muted);"><i data-lucide="clock" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Open now: 18:00 - 23:00</div>
+              <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Book a Table</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 2 (Le Petit Chalet) -->
+        <div class="list-card horiz-card">
+          <div class="list-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Le Petit Chalet">
+            <div class="list-card-badges">
+              <span class="badge badge-choice">Best Atmosphere</span>
+            </div>
+            <input type="checkbox" id="fav-rest-2" class="heart-checkbox">
+            <label for="fav-rest-2" class="heart-btn" title="Save to list">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </label>
+          </div>
+          <div class="list-card-content">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+              <span class="list-card-tag">Bistro • French • Paris</span>
+              <span style="font-size: 0.85rem; font-weight: 600; color: var(--brand-red);">££ - £££</span>
+            </div>
+            <a href="hotel-detail.html" class="list-card-title" style="font-size: 1.4rem; margin-bottom: 10px;">Le Petit Chalet</a>
+            
+            <div class="rating-container" style="margin-bottom: 12px;">
+              <div class="rating-bubbles">
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble half"></span>
+              </div>
+              <span class="rating-count">1,215 reviews</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Charming neighborhood French bistro offering organic wines, classic escargots, and freshly baked soufflés.
+            </p>
+
+            <div class="list-card-details" style="border-top-style: solid;">
+              <div style="font-size: 0.9rem; color: var(--text-muted);"><i data-lucide="clock" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Open now: 12:00 - 22:30</div>
+              <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">Book a Table</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 3 (Skyline Lounge & Grill) -->
+        <div class="list-card horiz-card">
+          <div class="list-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=600&q=80" alt="Skyline Lounge & Grill">
+            <div class="list-card-badges">
+              <span class="badge badge-value">Top Cocktails</span>
+            </div>
+            <input type="checkbox" id="fav-rest-3" class="heart-checkbox">
+            <label for="fav-rest-3" class="heart-btn" title="Save to list">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </label>
+          </div>
+          <div class="list-card-content">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+              <span class="list-card-tag">Bar & Grill • New York</span>
+              <span style="font-size: 0.85rem; font-weight: 600; color: var(--brand-red);">££ - £££</span>
+            </div>
+            <a href="hotel-detail.html" class="list-card-title" style="font-size: 1.4rem; margin-bottom: 10px;">Skyline Lounge & Grill</a>
+            
+            <div class="rating-container" style="margin-bottom: 12px;">
+              <div class="rating-bubbles">
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble half"></span>
+              </div>
+              <span class="rating-count">948 reviews</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Rooftop bar featuring dry-aged steaks, artisan signature craft beers, and incredible views of the city skyline.
+            </p>
+
+            <div class="list-card-details" style="border-top-style: solid;">
+              <div style="font-size: 0.9rem; color: var(--text-muted);"><i data-lucide="clock" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Open now: 16:00 - 02:00</div>
+              <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">Book a Table</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 4 (Shibuya Ramen Lab) -->
+        <div class="list-card horiz-card">
+          <div class="list-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="Shibuya Ramen Lab">
+            <div class="list-card-badges">
+              <span class="badge badge-choice">Best Value</span>
+            </div>
+            <input type="checkbox" id="fav-rest-4" class="heart-checkbox">
+            <label for="fav-rest-4" class="heart-btn" title="Save to list">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </label>
+          </div>
+          <div class="list-card-content">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+              <span class="list-card-tag">Japanese • Ramen • Tokyo</span>
+              <span style="font-size: 0.85rem; font-weight: 600; color: var(--brand-green);">£</span>
+            </div>
+            <a href="hotel-detail.html" class="list-card-title" style="font-size: 1.4rem; margin-bottom: 10px;">Shibuya Ramen Lab</a>
+            
+            <div class="rating-container" style="margin-bottom: 12px;">
+              <div class="rating-bubbles">
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+                <span class="bubble filled"></span>
+              </div>
+              <span class="rating-count">1,894 reviews</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+              World-renowned craft Tonkotsu ramen shop with self-order ticket machines and cozy individual booths.
+            </p>
+
+            <div class="list-card-details" style="border-top-style: solid;">
+              <div style="font-size: 0.9rem; color: var(--text-muted);"><i data-lucide="clock" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Open now: 11:00 - 23:00</div>
+              <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">Join Waitlist</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand" style="margin-bottom: 20px;">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" fill="var(--brand-green)" stroke="none"/>
+              <circle cx="8.5" cy="11.5" r="2.5" fill="white" stroke="none"/>
+              <circle cx="8.5" cy="11.5" r="1" fill="black" stroke="none"/>
+              <circle cx="15.5" cy="11.5" r="2.5" fill="white" stroke="none"/>
+              <circle cx="15.5" cy="11.5" r="1" fill="black" stroke="none"/>
+              <polygon points="12,13 10,15 14,15" fill="white" stroke="none"/>
+            </svg>
+            <span>Tripadvisor</span>
+          </div>
+          <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.5;">World's largest travel guidance platform. Read reviews and book hotels, restaurants, and outdoor excursions worldwide.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Tripadvisor</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Press & Media</a></li>
+            <li><a href="#">Resources & Policies</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="hotels.html">Hotels Directory</a></li>
+            <li><a href="restaurants.html" class="active">Restaurants Guide</a></li>
+            <li><a href="things-to-do.html">Things to Do</a></li>
+            <li><a href="index.html">Travel Articles</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Business Solutions</h4>
+          <ul>
+            <li><a href="#">Claim Your Listing</a></li>
+            <li><a href="#">Advertise with Us</a></li>
+            <li><a href="#">Sponsored Placements</a></li>
+            <li><a href="#">Content API</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Tripadvisor LLC. All rights reserved. TripAdvisor Clone Project.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookies Consent</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
